@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117233409) do
+ActiveRecord::Schema.define(version: 20161118001506) do
 
   create_table "city_lists", force: :cascade do |t|
     t.string   "city"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20161117233409) do
     t.integer  "city_list_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.datetime "ate_at"
     t.index ["city_list_id"], name: "index_restaurants_on_city_list_id"
   end
 

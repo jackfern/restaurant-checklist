@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
     before_action :set_city_list
+    before_action :set_restaurant, except: [:create]
 
 
     def create
@@ -8,7 +9,6 @@ class RestaurantsController < ApplicationController
     end
 
     def destroy
-        @restaurant = @city_list.restaurants.find(params[:id])
         if @restaurant.destroy
             flash[:success] = "Restaurant was deleted"
         else
@@ -17,7 +17,16 @@ class RestaurantsController < ApplicationController
         redirect_to @city_list
     end
 
+    def eat
+        @restaurant.update_attribute(:ate_at, Time.now)
+        redirect_to @city_list, notice: "Restaurant ate at"
+    end
+
     private
+
+    def set_restaurant
+        @restaurant = @city_list.restaurants.find(params[:id])
+    end
 
     def set_city_list
         @city_list = CityList.find(params[:city_list_id])
