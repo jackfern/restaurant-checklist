@@ -1,7 +1,8 @@
 <div class = "row clearfix">
     <% if restaurant.ate? %>
         <div class="eat">
-            <%= link_to "Mark that you have eaten here", eat_city_list_restaurant_path(@city_list, restaurant.id), method: :patch %>
+            <%= link_to eat_city_list_restaurant_path(@city_list, restaurant.id), method: :patch do %>
+            <% end %>
         </div>
         <div class="restaurant">
             <p style = "opacity: .4;"><strike><%= restaurant.name %> <br> <%= restaurant.description %> <br> <%= restaurant.address %></strike></p>

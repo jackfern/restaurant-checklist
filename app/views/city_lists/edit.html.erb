@@ -1,6 +1,9 @@
-<h1>Editing City List</h1>
+<h1 class="city_list_title">Edit City</h1>
 
-<%= render 'form', city_list: @city_list %>
+<div class="forms">
+    <%= render 'form'%>
+</div>
 
-<%= link_to 'Show', @city_list %> |
-<%= link_to 'Back', city_lists_path %>
+<div class="links">
+    <%= link_to 'Cancel', city_lists_path %>
+</div>

@@ -1,10 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>City:</strong>
-  <%= @city_list.city %>
-</p>
-
+<h2 class= "city_list_title"> <%= @city_list.city %></h2>
 
 <div id = "restaurants_wrapper">
     <%= render @city_list.restaurants %>
@@ -13,5 +7,9 @@
     </div>
 </div>
 
-<%= link_to 'Edit', edit_city_list_path(@city_list) %> |
-<%= link_to 'Back', city_lists_path %>
+<div class="links">
+    <%= link_to 'Edit', edit_city_list_path(@city_list) %> |
+    <%= link_to 'Delete', city_list_path(@city_list), method: :delete, data: { confirm: "Are you sure?" }
+ %> |
+    <%= link_to 'Back', city_lists_path %>
+</div>

@@ -1,5 +1,5 @@
-<%= form_for(city_list) do |f| %>
-  <% if city_list.errors.any? %>
+<%= form_for(@city_list) do |f| %>
+  <% if @city_list.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(city_list.errors.count, "error") %> prohibited this city_list from being saved:</h2>
 

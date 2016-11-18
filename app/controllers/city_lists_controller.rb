@@ -56,7 +56,7 @@ class CityListsController < ApplicationController
   def destroy
     @city_list.destroy
     respond_to do |format|
-      format.html { redirect_to city_lists_url, notice: 'City list was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'City list was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
