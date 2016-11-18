@@ -1,0 +1,9 @@
+<p>
+<%= restaurant.name %>
+<br>
+<%= restaurant.description %>
+<br>
+<%= restaurant.address %>
+</br>
+<%= link_to "Delete", city_list_restaurant_path(@city_list, restaurant.id), method: :delete, data: { confirm: "Are you sure?" } %>
+</p>
