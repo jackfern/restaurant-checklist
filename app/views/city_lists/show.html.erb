@@ -1,11 +1,15 @@
 <h2 class= "city_list_title"> <%= @city_list.city %></h2>
 
+<h4> Restaurants I want to eat at  </h4>
+
 <div id = "restaurants_wrapper">
     <%= render @city_list.restaurants %>
     <div id="form">
         <%= render "restaurants/form" %>
     </div>
 </div>
+
+
 
 <div class="links">
     <%= link_to 'Edit', edit_city_list_path(@city_list) %> |
