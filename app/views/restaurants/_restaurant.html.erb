@@ -1,18 +1,8 @@
 <div class = "row clearfix">
-    <% if restaurant.ate? %>
-
-        <div class="restaurant">
-            <p><%= restaurant.name %> <br> <%= restaurant.description %> <br> <%= restaurant.address %></p>
-        </div>
-
-        <div class="trash">
-            <%= link_to "Delete", city_list_restaurant_path(@city_list, restaurant.id), method: :delete, data: { confirm: "Are you sure?" }%>
-        </div>
-    <% else %>
+    <% if !restaurant.ate? %>
         <div class="eat">
             <%= link_to "Mark that you have eaten here and liked it", eat_and_liked_city_list_restaurant_path(@city_list, restaurant.id), method: :patch %>
         </div>
-
         <div class="eat">
             <%= link_to "Mark that you have eaten here and didn't like it", eat_and_didnt_like_city_list_restaurant_path(@city_list, restaurant.id), method: :patch %>
         </div>
@@ -25,4 +15,3 @@
         </div>
     <% end %>
 </div>
-</p>

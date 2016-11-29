@@ -19,14 +19,14 @@ class RestaurantsController < ApplicationController
 
     def eat_and_liked
         @restaurant.update_attribute(:ate_at, Time.now)
-        @eaten_restaurant_and_liked = @restaurant
-        redirect_to @city_list, notice: "Restaurant ate at"
+        @restaurant.update_attribute(:liked_it, true)
+        redirect_to @city_list
     end
 
     def eat_and_didnt_like
         @restaurant.update_attribute(:ate_at, Time.now)
-        @eaten_restaurant_and_didnt_like = @restaurant
-        redirect_to @city_list, notice: "Restaurant ate at"
+        @restaurant.update_attribute(:liked_it, false)
+        redirect_to @city_list
     end
 
     private
