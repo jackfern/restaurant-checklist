@@ -11,15 +11,15 @@
     <% if !restaurant.ate? %>
     <div class="restaurant_item">
     <div class="restaurant_item_info">
-        Restaurant: <%= restaurant.name %>
+        Restaurant: <%= restaurant.name %> &nbsp;&nbsp;&nbsp; <%= link_to "Delete", city_list_restaurant_path(@city_list, restaurant.id), method: :delete, data: { confirm: "Are you sure?" }%>
         <% if restaurant.description? %>
         </p>Description: <%= restaurant.description %></p>
         <% end %>
         <% if restaurant.address? %>
+
         Address: <%= restaurant.address %>
         <% end %>
     </div>
-    <br>
     <div class="eat">
         <%= link_to "Mark that you have eaten here and liked it", eat_and_liked_city_list_restaurant_path(@city_list, restaurant.id), method: :patch %>
     </div>
@@ -28,57 +28,53 @@
         <%= link_to "Mark that you have eaten here and didn't like it", eat_and_didnt_like_city_list_restaurant_path(@city_list, restaurant.id), method: :patch %>
     </div>
     <p>
-    <div class="trash">
-        <%= link_to "Delete", city_list_restaurant_path(@city_list, restaurant.id), method: :delete, data: { confirm: "Are you sure?" }%>
-    </div>
+
+
+
     </div>
     <% end %>
 <% end %>
 
 <hr>
 
-<h4><u> Restaurants I ate at and liked it: </u></h4>
+<h4><u> Restaurants I ate at and liked: </u></h4>
 
 <% @city_list.restaurants.each do |restaurant| %>
     <% if restaurant.ate? && restaurant.liked_it? %>
     <div class="restaurant_item">
         <div class="restaurant_item_info">
-            Restaurant: <%= restaurant.name %>
+            Restaurant: <%= restaurant.name %> &nbsp;&nbsp;&nbsp; <%= link_to "Delete", city_list_restaurant_path(@city_list, restaurant.id), method: :delete, data: { confirm: "Are you sure?" }%>
             <% if restaurant.description? %>
             </p>Description: <%= restaurant.description %></p>
             <% end %>
             <% if restaurant.address? %>
+            <p>
             Address: <%= restaurant.address %>
             <% end %>
         </div>
-    <br>
-    <div class="trash">
-        <%= link_to "Delete", city_list_restaurant_path(@city_list, restaurant.id), method: :delete, data: { confirm: "Are you sure?" }%>
-    </div>
+
     </div>
     <% end %>
 <% end %>
 
 <hr>
 
-<h4><u> Restaurants I ate at and didn't like it: </u></h4>
+<h4><u> Restaurants I ate at and didn't like: </u></h4>
 
 <% @city_list.restaurants.each do |restaurant| %>
     <% if restaurant.ate? && !restaurant.liked_it? %>
     <div class="restaurant_item">
         <div class="restaurant_item_info">
-            Restaurant: <%= restaurant.name %>
+            Restaurant: <%= restaurant.name %> &nbsp;&nbsp;&nbsp; <%= link_to "Delete", city_list_restaurant_path(@city_list, restaurant.id), method: :delete, data: { confirm: "Are you sure?" }%>
             <% if restaurant.description? %>
             </p>Description: <%= restaurant.description %></p>
             <% end %>
             <% if restaurant.address? %>
+            <p>
             Address: <%= restaurant.address %>
             <% end %>
     </div>
-<br>
-    <div class="trash">
-        <%= link_to "Delete", city_list_restaurant_path(@city_list, restaurant.id), method: :delete, data: { confirm: "Are you sure?" }%>
-    </div>
+
     </div>
     <% end %>
 <% end %>
