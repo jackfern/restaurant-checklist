@@ -1,0 +1,75 @@
+body {
+    background: url(https://static.pexels.com/photos/2324/skyline-buildings-new-york-skyscrapers.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+}
+
+.links {
+    font-size: 40pt;
+    margin-left: 10px;
+}
+
+.form {
+    margin-left: 10px;
+}
+
+.city_list_title {
+    margin-left: 10px;
+    font-family: arial;
+}
+
+.city_list_container {
+    border-radius: 25px;
+    width: 500px;
+    background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+}
+
+.city_container {
+    border-radius: 25px;
+    width: 500px;
+    background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+}
+
+.new_city {
+    border-radius: 25px;
+    width: 500px;
+    background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+}
+
+h4 {
+    margin-left: 10px;
+}
+
+.restaurant_item_info {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 10px;
+}
+
+.restaurant_item {
+    border-radius: 25px;
+    width: 500px;
+    background:
+}
+
+.restaurant_item {
+    width: 500px;
+    background: white;
+    border-width: thin;
+    border-color: black;
+    border-style: solid;
+}

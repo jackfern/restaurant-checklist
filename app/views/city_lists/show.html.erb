@@ -1,62 +1,98 @@
+
+<div class="city_container">
+
 <h2 class= "city_list_title"> <%= @city_list.city %></h2>
 
-<h4> Restaurants I want to eat at  </h4>
+<br>
+
+<h4><u>  Restaurants I want to eat at:  </u></h4>
 
 <% @city_list.restaurants.each do |restaurant| %>
     <% if !restaurant.ate? %>
-
+    <div class="restaurant_item">
+    <div class="restaurant_item_info">
+        Restaurant: <%= restaurant.name %>
+        <% if restaurant.description? %>
+        </p>Description: <%= restaurant.description %></p>
+        <% end %>
+        <% if restaurant.address? %>
+        Address: <%= restaurant.address %>
+        <% end %>
+    </div>
+    <br>
     <div class="eat">
         <%= link_to "Mark that you have eaten here and liked it", eat_and_liked_city_list_restaurant_path(@city_list, restaurant.id), method: :patch %>
     </div>
+    <br>
     <div class="eat">
         <%= link_to "Mark that you have eaten here and didn't like it", eat_and_didnt_like_city_list_restaurant_path(@city_list, restaurant.id), method: :patch %>
     </div>
-        <%= restaurant.name %> </p>
-        <%= restaurant.description %></p>
-        <%= restaurant.address %>
+    <p>
     <div class="trash">
         <%= link_to "Delete", city_list_restaurant_path(@city_list, restaurant.id), method: :delete, data: { confirm: "Are you sure?" }%>
+    </div>
     </div>
     <% end %>
 <% end %>
 
-<h4> Restaurants I ate at and liked it </h4>
+<hr>
+
+<h4><u> Restaurants I ate at and liked it: </u></h4>
 
 <% @city_list.restaurants.each do |restaurant| %>
     <% if restaurant.ate? && restaurant.liked_it? %>
-        <%= restaurant.name %> </p>
-        <%= restaurant.description %></p>
-        <%= restaurant.address %></p>
+    <div class="restaurant_item">
+        <div class="restaurant_item_info">
+            Restaurant: <%= restaurant.name %>
+            <% if restaurant.description? %>
+            </p>Description: <%= restaurant.description %></p>
+            <% end %>
+            <% if restaurant.address? %>
+            Address: <%= restaurant.address %>
+            <% end %>
+        </div>
+    <br>
     <div class="trash">
         <%= link_to "Delete", city_list_restaurant_path(@city_list, restaurant.id), method: :delete, data: { confirm: "Are you sure?" }%>
+    </div>
     </div>
     <% end %>
 <% end %>
 
-<h4> Restaurants I ate at and didn't like it </h4>
+<hr>
+
+<h4><u> Restaurants I ate at and didn't like it: </u></h4>
 
 <% @city_list.restaurants.each do |restaurant| %>
     <% if restaurant.ate? && !restaurant.liked_it? %>
-        <%= restaurant.name %> </p>
-        <%= restaurant.description %></p>
-        <%= restaurant.address %></p>
-
+    <div class="restaurant_item">
+        <div class="restaurant_item_info">
+            Restaurant: <%= restaurant.name %>
+            <% if restaurant.description? %>
+            </p>Description: <%= restaurant.description %></p>
+            <% end %>
+            <% if restaurant.address? %>
+            Address: <%= restaurant.address %>
+            <% end %>
+    </div>
+<br>
     <div class="trash">
         <%= link_to "Delete", city_list_restaurant_path(@city_list, restaurant.id), method: :delete, data: { confirm: "Are you sure?" }%>
+    </div>
     </div>
     <% end %>
 <% end %>
 
+<br>
+<br>
+<br>
+
+<h4>What Restaurant Do You Want To Try?</h4>
 <div id = "restaurants_wrapper">
     <div id="form">
         <%= render "restaurants/form" %>
     </div>
 </div>
-
-
-
-
-
 
 
 <div class="links">

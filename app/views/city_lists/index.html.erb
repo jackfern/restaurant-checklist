@@ -1,6 +1,11 @@
+<hr>
+
 <h2 class="city_list_title">Cities</h2>
 
 <hr>
+
+<div class="city_list_container">
+
 
 <% @city_lists.each do |city_list| %>
     <div class="index_row clearfix">
@@ -9,5 +14,7 @@
 <% end %>
 
 <div class="links">
-    <%= link_to "New City", new_city_list_path %>
+    <%= link_to "Create New City", new_city_list_path %>
+</div>
+
 </div>
